@@ -10,23 +10,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Modelo da Viagem
+//Modelo de viagem
+
 model Trip {
-  id           String            @id @default(uuid())
-  name         String
-  location     String
-  startDate    DateTime
-  endDate      DateTime
-  pricePerDay  Decimal           @db.Decimal(8, 2)
-  description  String
-  coverImage   String
-  imagesUrl    String[]
-  highlights   String[]
-  maxGuests    Int
-  reservations TripReservation[]
+  id              String            @id @default(uuid())
+  name            String
+  location        String
+  startDate       DateTime
+  endDate         DateTime
+  pricePerDay     Decimal           @db.Decimal(8, 2)
+  description     String
+  coverImage      String
+  imagesUrl       String[]
+  highlights      String[]
+  maxGuests       Int
+  TripReservation TripReservation[]
 }
 
-// Modelo da Reserva de Viagem
+// Modelo de Reserva de Viagem
+
 model TripReservation {
   id        String   @id @default(uuid())
   tripId    String
@@ -38,7 +40,6 @@ model TripReservation {
   totalPaid Decimal  @db.Decimal(8, 2)
 }
 
-// Modelo de Usuario
 model Account {
   id                String  @id @default(cuid())
   userId            String
@@ -67,14 +68,14 @@ model Session {
 }
 
 model User {
-  id            String            @id @default(cuid())
-  name          String?
-  email         String?           @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
-  reservations  TripReservation[]
+  id              String            @id @default(cuid())
+  name            String?
+  email           String?           @unique
+  emailVerified   DateTime?
+  image           String?
+  accounts        Account[]
+  sessions        Session[]
+  TripReservation TripReservation[]
 }
 
 model VerificationToken {
