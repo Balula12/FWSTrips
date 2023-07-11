@@ -21,7 +21,7 @@ const QuickSearch = () => {
                 <Image width= {35} height= {35} src='/inn-icon.png' alt='hotel' />
                     
 
-            <p className='text-sm text-grayPrimary'>Resorte</p>
+            <p className='text-sm text-grayPrimary'>Resort</p>
             </div>
         <div className='flex flex-col items-center gap-1'>
                 <Image width= {35} height= {35} src='/hotel-icon.png' alt='hotel' />
@@ -34,6 +34,8 @@ const QuickSearch = () => {
                     
 
             <p className='text-sm text-grayPrimary'>Pousada</p>
+
+            
             </div>
         </div>
       </div>
