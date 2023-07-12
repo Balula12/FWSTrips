@@ -1,6 +1,6 @@
 
+import { prisma } from "@/lib/prisma";
 import React, { useState } from "react";
-import { prisma } from "../../../lib/pisma";
 
 const getTrips = async () => {
     const trips = await prisma.trip.findMany({})
@@ -9,7 +9,7 @@ const getTrips = async () => {
 }
 
 const Trips = async () => {
-    const data = await fetch("http://jsonplaceholder.typicode.com.posts",{
+    const data = await fetch("http://jsonplaceholder.typicode.com/posts",{
        
      }).then((res) => res.json())
 
